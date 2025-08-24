@@ -1,0 +1,16 @@
+CREATE DATABASE gym_db;
+
+USE gym_db;
+
+CREATE TABLE members (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    age INT NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    contact VARCHAR(15) NOT NULL,
+    level VARCHAR(50) NOT NULL,
+    subscription VARCHAR(50) NOT NULL,
+    student VARCHAR(10) NOT NULL,
+    price INT NOT NULL,
+    reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
