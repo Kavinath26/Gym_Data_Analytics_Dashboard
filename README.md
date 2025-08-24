@@ -1,11 +1,11 @@
-# Gym Data Analytics Dashboard
+# Gym Membership Real-Time Analytics
 
 A full-stack project that integrates **web development, database management, and real-time analytics** to manage gym membership registrations and provide actionable insights through interactive dashboards.
 
 ---
 
 ## 📌 Project Overview
-The **Gym Data Analytics Dashboard** is a complete system that:
+The **Gym Membership Real-Time Analytics** is a complete system that:
 - Collects **gym membership registrations** via a Flask web application.
 - Stores user details, subscription type, and pricing information in a **MySQL database**.
 - Applies **business logic** such as automated pricing and student discounts.
