@@ -45,12 +45,20 @@ This project demonstrates **end-to-end data handling**, from **data collection �
 
 ---
 
+## 📊 Webpage Preview
+
+<img width="1919" height="1079" alt="webpage-1" src="https://github.com/user-attachments/assets/fc85f661-c021-4f3a-b8f6-7336ae0b6b79" />
+---
+<img width="1919" height="1079" alt="webpage-2" src="https://github.com/user-attachments/assets/52083dbf-d2e6-4a44-8431-ec15f2d9a5a8" />
+---
+<img width="1919" height="1079" alt="webpage-3" src="https://github.com/user-attachments/assets/9656ac15-c3e1-46e6-a0ce-c9d02402cc8f" />
+
+---
+
 ## 📊 Dashboard Preview
 
-**Example:**  
 
 <img width="1285" height="724" alt="Screenshot 2025-08-23 040149" src="https://github.com/user-attachments/assets/2b7d2e9e-2913-433d-9187-00563626da6e" />
-
 ---
 <img width="1919" height="1020" alt="Screenshot 2025-08-23 040842" src="https://github.com/user-attachments/assets/7b923157-59c3-4080-9be8-ddce949e16c1" />
 
