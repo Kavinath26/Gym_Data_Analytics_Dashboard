@@ -82,25 +82,6 @@ This project demonstrates **end-to-end data handling**, from **data collection �
 
 ---
 
-## 🖥️ How to Run the Project Locally
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/Gym-Data-Analytics-Dashboard.git
-   cd Gym-Data-Analytics-Dashboard
-2. **Set up virtual environment and install dependencies**
-   ```bash
-   pip install -r requirements.txt
-3. **Start MySQL server and create database:**
-   ```bash
-   CREATE DATABASE gym_db;
-4. **Configure database credentials in app.py:**
-   ```bash
-   app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://username:password@localhost/gym_db'
-5. **Run the Flask application**
-   ```bash
-   python app.py
-6. **Connect Power BI to MariaDB (using ODBC) for real-time dashboards**
-
 ## 🎯 Key Learning Outcomes
 
 - Building a full-stack application with Flask and MySQL.
