@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kavi Gym Membership</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Oswald', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('https://img.freepik.com/free-photo/individual-doing-sport-healthy-lifestyle_23-2151764292.jpg?semt=ais_hybrid&w=740&q=80') no-repeat center center/cover;
+      position: relative;
+      color: white;
+      text-align: center;
+      overflow-y: auto;
+    }
+    body::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(15,32,39,0.75);
+      z-index: 0;
+    }
+
+    .page-container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+    .active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    p { margin: 5px 0; }
+
+    img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 15px;
+      margin: 20px 0;
+      box-shadow: 0px 0px 15px rgba(255,255,255,0.2);
+      transition: transform 0.3s ease-in-out;
+    }
+    img:hover { transform: scale(1.05); }
+
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    input, select {
+      width: 80%;
+      max-width: 400px;
+      padding: 12px;
+      margin-top: 15px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+      text-align: center;
+      background: rgba(255,255,255,0.15);
+      color: white;
+      box-shadow: inset 0 0 5px rgba(255,255,255,0.2), 0 0 10px rgba(255,255,255,0.1);
+      transition: all 0.3s ease-in-out;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+    input:focus, select:focus {
+      outline: none;
+      box-shadow: 0 0 15px rgba(255,111,97,0.8);
+      transform: translateY(-3px);
+    }
+    input::placeholder { color: rgba(255,255,255,0.7); }
+
+    select option {
+      background: #0f2027;
+      color: white;
+    }
+
+    button {
+      padding: 12px 20px;
+      border: none;
+      background: #ff6f61;
+      color: white;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0px 0px 15px rgba(255,111,97,0.6);
+    }
+    button:hover {
+      background: #ff3b2e;
+      box-shadow: 0px 0px 25px rgba(255,59,46,0.9);
+      transform: scale(1.08) translateY(-3px);
+    }
+
+    .buttons-container {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      max-width: 400px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 2em; }
+      input, select { width: 90%; font-size: 14px; padding: 10px; }
+      button { width: 45%; }
+      .buttons-container { width: 90%; flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Home Page -->
+  <div class="page-container active" id="homePage">
+    <h1>🏋️‍♂️ KAVI'S GYM</h1>
+    <p>📍 South St, Aavadi, Chennai</p>
+    <p>📞 1234567890</p>
+    <img src="https://wallpaperbat.com/img/978170-gym-wallpaper.jpg" alt="Gym">
+    <button onclick="showPage('registerPage')">Register</button>
+  </div>
+
+  <!-- Register Page -->
+  <div class="page-container" id="registerPage">
+    <h1>Register Now</h1>
+    <form id="registerForm">
+      <input type="text" placeholder="Name" id="name" required>
+      <input type="number" placeholder="Age" id="age" required>
+      <input type="email" placeholder="Email" id="email" required>
+      <input type="text" placeholder="Contact" id="contact" required>
+      <select id="level" required>
+        <option value="">Select Level</option>
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="pro">Pro</option>
+      </select>
+      <select id="subscription" required>
+        <option value="">Select Subscription</option>
+        <option value="basic">Basic</option>
+        <option value="standard">Standard</option>
+        <option value="premium">Premium</option>
+      </select>
+      <select id="student" required>
+        <option value="">Student?</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <div class="buttons-container">
+        <button type="button" onclick="showPage('homePage')">Back</button>
+        <button type="submit">Complete Registration</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Success Page -->
+  <div class="page-container" id="successPage">
+    <h1>Registration Completed</h1>
+    <p id="priceInfo"></p>
+    <img src="https://i.pinimg.com/736x/e6/08/fe/e608fe0c42e346a7444e21d993abcd1c.jpg" alt="Gym">
+    <button onclick="showPage('homePage')">Home</button>
+  </div>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page-container').forEach(p => p.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const data = {
+        name: document.getElementById('name').value,
+        age: document.getElementById('age').value,
+        email: document.getElementById('email').value,
+        contact: document.getElementById('contact').value,
+        level: document.getElementById('level').value,
+        subscription: document.getElementById('subscription').value,
+        student: document.getElementById('student').value
+      };
+
+      fetch('http://localhost:5000/register', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+      })
+      .then(res => res.json())
+      .then(res => {
+        document.getElementById('priceInfo').textContent = res.message;
+        showPage('successPage');
+        document.getElementById('registerForm').reset();
+      })
+      .catch(err => {
+        console.error(err);
+        alert("Error submitting registration. Please try again.");
+      });
+    });
+  </script>
+
+</body>
+</html>
