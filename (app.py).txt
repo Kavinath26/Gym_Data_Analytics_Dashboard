@@ -1,0 +1,58 @@
+from flask import Flask, request, jsonify
+import mysql.connector
+
+app = Flask(__name__)
+
+# MySQL configuration
+db = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="root",
+    database="gym_db"
+)
+
+cursor = db.cursor(dictionary=True)
+
+# Enable CORS if front-end is separate
+from flask_cors import CORS
+
+CORS(app)
+
+
+@app.route('/register', methods=['POST'])
+def register_member():
+    data = request.get_json()
+
+    name = data.get('name')
+    age = data.get('age')
+    email = data.get('email')
+    contact = data.get('contact')
+    level = data.get('level')
+    subscription = data.get('subscription')
+    student = data.get('student')
+
+    # Calculate price
+    price = 0
+    if subscription == 'basic':
+        price = 1500
+    elif subscription == 'standard':
+        price = 3000
+    elif subscription == 'premium':
+        price = 5000
+
+    if student.lower() == 'yes':
+        price -= price * 0.15
+
+    # Insert into MySQL
+    query = """
+        INSERT INTO members (name, age, email, contact, level, subscription, student, price)
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+    """
+    cursor.execute(query, (name, age, email, contact, level, subscription, student, int(price)))
+    db.commit()
+
+    return jsonify({"message": f"Registration successful! Amount to pay: ₹{int(price)}"}), 200
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
