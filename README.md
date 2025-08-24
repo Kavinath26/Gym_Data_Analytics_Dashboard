@@ -73,11 +73,12 @@ This project demonstrates **end-to-end data handling**, from **data collection �
 
 ---
 
-## 📈 Insights Generated
-- Distribution of **subscription plans** (Basic, Standard, Premium).  
-- **Revenue analysis** based on memberships.  
-- **Student vs Non-Student membership ratio**.  
-- **Demographic insights** for better decision-making.  
+## 📈 Key Business Insights
+- Peak registrations and revenue occur mid-week; targeted promotions on low-activity days can boost engagement.
+- Beginner-level trainees dominate, indicating an opportunity to offer advanced training programs.
+- Revenue is closely tied to trainee registrations, showing direct impact of acquisition campaigns.
+- Trainer workload is fairly balanced but can be optimized for efficiency.
+- Student discount program appears effective, given the 50/50 split of student vs non-student members.
 
 ---
 
